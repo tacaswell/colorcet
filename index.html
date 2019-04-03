@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>colorcet 1.0.0 documentation</title>
+<meta content="Collection of perceptually uniform colormaps" name="description"/>
+<meta content="Anaconda" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/css/main.css" rel="stylesheet"/>
+<link href="_static/nbsite.css" rel="stylesheet"/>
+<link href="_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="_static/js/main.js"></script>
+<script src="_static/nbsite.js"></script>
+<script src="_static/require.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="/index.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="#">
+<img alt="Logo" src="_static/logo.png"/>
+</a>
+<a class="navigation-menu logo-text" href="#">colorcet</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="https://github.com/pyviz/colorcet">Github</a></li>
+<li class="nav-link doc-head"><a href="https://gitter.im/pyviz/pyviz">Gitter</a></li>
+<li class="nav-link doc-head"><a href="http://pyviz.org">PyViz</a></li>
+<li class="nav-link">
+<div style="display:inline-block;vertical-align: middle;">
+<div class="search-bar">
+<form action="search.html" method="get" role="search">
+<input name="q" placeholder="Search" type="search"/>
+<button type="submit">
+<img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+</button>
+</form>
+</div>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="second-nav">
+<nav>
+<ul class="navigation-menu show">
+<li class="nav-link doc-head"><a href="#">Introduction</a></li>
+<li class="nav-link doc-head"><a href="getting_started/index.html">Getting Started</a></li>
+<li class="nav-link doc-head"><a href="user_guide/index.html">User Guide</a></li>
+<li class="nav-link doc-head"><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<h1><img src="_static/logo_stacked.png" width="200"/></h1>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Collection-of-perceptually-accurate-colormaps">Collection of perceptually accurate colormaps<a class="anchor-link" href="#Collection-of-perceptually-accurate-colormaps">¶</a></h2><p><a href="https://github.com/pyviz/colorcet">Colorcet</a> is a collection of 
+perceptually acccurate 256-color colormaps for use with Python plotting programs like
+<a href="http://bokeh.pydata.org">Bokeh</a>,
+<a href="http://matplotlib.org">Matplotlib</a>,
+<a href="http://holoviews.org">HoloViews</a>, and
+<a href="https://github.com/pyviz/datashader">Datashader</a>.</p>
+<p>There are two types of colormaps currently included: <a href="./user_guide/Continuous.html">continuous</a> and <a href="./user_guide/Categorical.html">categorical</a>. The continuous colormaps are perceptually uniform, with each new color equally perceptually distinct from the previous and following colors. The continuous maps were constructed by <a href="http://peterkovesi.com/projects/colourmaps">Peter Kovesi</a> at the Center for Exploration Targeting using the methods described in <a href="https://arxiv.org/abs/1509.03700">Kovesi (2015)</a>.</p>
+<p>The <a href="user_guide/Categorical.html">categorical</a> colormaps are perceptually distinct, but not uniform; each color is meant for a separate category and not as a position on a numerical scale. Here, categorical colormaps of arbitrary length are generated to cover a perceptual space with well-separated samples, using the method from 
+<a href="https://strathprints.strath.ac.uk/30312/1/colorpaper_2006.pdf">Glasbey, van der Heijden, Toh, &amp; Gray (2007)</a>.</p>
+<p>See <a href="http://colorcet.pyviz.org/getting_started">Getting Started</a> for installation info, and the <a href="./user_guide/index.html">User Guide</a> for more info on what colormaps are available and how to use them.</p>
+<h2 id="Background">Background<a class="anchor-link" href="#Background">¶</a></h2><p>Apart from the four <a href="http://matplotlib.org/users/colormaps.html">uniform colormaps now provided with
+matplotlib</a>, most
+continuous colormaps shipping with Python plotting programs are highly
+perceptually nonuniform.  That is, small changes in data values
+result in large changes in the perceptual appearance of the
+corresponding colors, or vice versa.  For instance, the popular matplotlib
+"hot" and "jet" colormaps have long stretches where the apparent
+colors change imperceptibly, such as the yellow region in "hot" and
+the cyan/green region in "jet":</p>
+<p><img alt="hot" src="assets/images/hot.png"/> <img alt="jet" src="assets/images/jet.png"/></p>
+<p>When colormaps are used for visualizing scientific datasets, these
+perceptual nonlinearities can make interpretation of this data very
+difficult, because false boundaries appear in the data, and genuine
+boundaries and changes can be obscured.</p>
+<p>Matplotlib now offers a <a href="https://github.com/matplotlib/viscm">tool to construct uniform
+colormaps</a>, but it doesn't yet
+allow construction of colormaps like those above.  To address this
+need, Peter Kovesi at the Center for Exploration
+Targeting created a set of colormaps that are sampled uniformly in a
+perceptual color space, using methods he describes in a <a href="https://arxiv.org/abs/1509.03700">paper on
+arXiv</a>.  For instance, the
+perceptually uniform versions of the above colormaps are called "fire"
+and "rainbow" in this package:</p>
+<p><img alt="fire" src="assets/images/fire.png"/> <img alt="rainbow" src="assets/images/rainbow.png"/></p>
+<p>You should be able to see the differences right away, revealing more
+detail, more faithfully than if you use non-uniform maps.  For
+instance, here is a population-density dataset (from
+<a href="https://github.com/bokeh/datashader">datashader</a>) rendered with the
+original matplotlib "hot" colormap:</p>
+<p><img alt="census_hot" src="assets/images/census_hot.png"/></p>
+<p>and the same dataset rendered with colorcet's "fire" colormap:</p>
+<p><img alt="census_fire" src="assets/images/census_fire.png"/></p>
+<p>It should be obvious that the "hot" version completely washes out
+detail at the high end, as if the image is overexposed, while "fire"
+makes detail visible throughout the data range.  Yet the qualitative
+effect is still roughly similar, allowing "fire" to be used in nearly
+any situation where the original "hot" was useful.</p>
+<p>Peter provides <a href="http://peterkovesi.com/projects/colourmaps">versions of 50 perceptually uniform colormaps for a
+variety of different plotting programs</a>, 
+and this package provides those colormaps ready to use from within Python
+programs.  The colormaps are all illustrated in the 
+<a href="./user_guide/index.html">user guide</a> that describes the 
+different types available and allows you to test how perceptually
+uniform they are on your particular display device.</p>
+<p>Peter's methods differ from those used in Matplotlib's
+uniform colormaps (as implemented in their <a href="https://github.com/matplotlib/viscm">viscm
+tool</a>), which (apart from using a
+different color model) are designed to satisfy different constraints.
+For instance, mpl's colormaps are always perceptually uniform in their
+monochrome representation, not just their original color
+representation, and are safe for colorblind viewers, neither of which
+are necessarily true of these colormaps.  On the other hand, colormaps
+like "fire" above, i.e., a usable perceptually equivalent of
+matplotlib/matlab's "hot", are not obtainable using viscm in any
+straightforward way, limiting the range of useful colormaps that can be created.
+In any case, this package focuses on making a set of useful colormaps
+readily available from within Python programs, rather than providing
+tools for building novel colormaps, for which see the 
+<a href="https://github.com/matplotlib/viscm">viscm tool</a> and
+<a href="http://peterkovesi.com/projects/colourmaps">Peter's original site</a>.</p>
+<p>Colorcet also includes <a href="user_guide/Categorical.html">categorical colormaps</a>
+that provide large numbers of distinct colors sampled systematically from a
+perceptually uniform space. These maps are made with similar methods, but 
+with a goal of having recognizable different colors rather than showing 
+an ordering like the perceptually uniform maps above.</p>
+<h2 id="Learning-more">Learning more<a class="anchor-link" href="#Learning-more">¶</a></h2><p>You can see all the details about the methods used to create these
+colormaps in <a href="https://arxiv.org/pdf/1509.03700v1.pdf">Peter Kovesi's 2015 arXiv
+paper</a> and in <a href="https://strathprints.strath.ac.uk/30312/1/colorpaper_2006.pdf">Glasbey et al. 2007</a>.  Other useful
+background is available in a 
+<a href="http://www.research.ibm.com/people/l/lloydt/color/color.HTM">1996 paper from IBM</a>.</p>
+<p>The Matplotlib project also has a number of relevant resources, including an excellent 
+<a href="https://www.youtube.com/watch?v=xAoljeRJ3lU">2015 SciPy talk</a>, the
+<a href="https://github.com/matplotlib/viscm">viscm tool for creating maps like the four in mpl</a>, the
+<a href="http://matplotlib.org/cmocean/">cmocean site</a> collecting a set of maps created by viscm, 
+and the <a href="https://bids.github.io/colormap/">discussion of how the mpl maps were created</a>.</p>
+<h2 id="Samples">Samples<a class="anchor-link" href="#Samples">¶</a></h2><p>All the colorcet colormaps that have short, memorable names (which are probably
+the most useful ones) are visible here:</p>
+<p><img src="assets/images/named.png" width="800"/></p>
+<p>But the complete set of 60+ is shown in the <a href="./user_guide/index.html">User Guide</a>.</p>
+</div>
+</div>
+</div>
+<div class="toctree-wrapper compound">
+</div>
+<hr class="docutils"/>
+<p><a class="reference external" href="https://raw.githubusercontent.com/pyviz/colorcet/master/examples/index.ipynb">Right click to download this notebook from GitHub.</a></p>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<footer class="footer">
+<div class="footer-links">
+<ul>
+<li><span class="footer-title">Links</span></li>
+<li><a href="#">Introduction</a></li>
+<li><a href="getting_started/index.html">Getting Started</a></li>
+<li><a href="user_guide/index.html">User Guide</a></li>
+<li><a href="about.html">About</a></li>
+</ul>
+<ul>
+<li><span class="footer-title">Join Us</span></li>
+<li><a href="https://github.com/pyviz/colorcet">Github</a></li>
+<li><a href="https://gitter.im/pyviz/pyviz">Gitter</a></li>
+<li><a href="http://pyviz.org">PyViz</a></li>
+</ul>
+<ul class="copyright">
+<li>2017-2019 Anaconda</li>
+</ul>
+</div>
+</footer>
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-61554933-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>
